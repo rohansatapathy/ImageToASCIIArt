@@ -34,5 +34,19 @@ public class ImageToASCIIMain {
             System.out.println(brightness);
         }
         System.out.println("...\n");
+
+        // Convert brightness array to ASCII array
+        BrightnessToASCIIPipeline brightnessToASCII = new BrightnessToASCIIPipeline();
+        char[][] ASCIIArray = brightnessToASCII.getASCIIArray(brightnessArray);
+
+        System.out.println("Successfully constructed ASCII array!");
+        System.out.println("Iterating through ASCII contents...");
+
+        char ASCIIChar;
+        for (int i = 0; i < 5; i++) {
+            ASCIIChar = ASCIIArray[0][i];
+            System.out.println(ASCIIChar);
+        }
+        System.out.println("...\n");
     }
 }
