@@ -7,11 +7,11 @@ public class ImageToASCIIMain {
 
         // Get RGBArray
         ImageToRGBPipeline imgToRGB = new ImageToRGBPipeline();
-        Color[][] RGBArray = imgToRGB.getRGBArrayFromImage("ascii-pineapple.jpeg");
+        Color[][] RGBArray = imgToRGB.getRGBArrayFromImage("ascii-pineapple.jpeg", 300);
 
         System.out.println("Successfully constructed RGB array!");
-        System.out.println("Width: " + RGBArray.length);
-        System.out.println("Height: " + RGBArray[0].length);
+        System.out.println("Width: " + RGBArray[0].length);
+        System.out.println("Height: " + RGBArray.length);
         System.out.println("Iterating through pixel contents...");
 
         Color color;
@@ -48,5 +48,15 @@ public class ImageToASCIIMain {
             System.out.println(ASCIIChar);
         }
         System.out.println("...\n");
+
+        // Print out image
+        for (char[] row : ASCIIArray) {
+            for (char character : row) {
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(character);
+                }
+            }
+            System.out.println();
+        }
     }
 }
