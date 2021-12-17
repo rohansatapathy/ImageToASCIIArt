@@ -1,6 +1,7 @@
 package com.rohansatapathy;
 
 import java.awt.*;
+import com.diogonunes.jcolor.*;
 
 public class ImageToASCIIMain {
     public static void main(String[] args) {
@@ -50,10 +51,15 @@ public class ImageToASCIIMain {
         System.out.println("...\n");
 
         // Print out image
-        for (char[] row : ASCIIArray) {
-            for (char character : row) {
+        Attribute textColor;
+        char character;
+        for (int row = 0; row < ASCIIArray.length; row++) {
+            for (int col = 0; col < ASCIIArray[0].length; col++) {
+                character = ASCIIArray[row][col];
+                color = RGBArray[row][col];
+                textColor = Attribute.TEXT_COLOR(color.getRed(), color.getGreen(), color.getBlue());
                 for (int i = 0; i < 3; i++) {
-                    System.out.print(character);
+                    System.out.print(Ansi.colorize(Character.toString(character), textColor, Attribute.BOLD()));
                 }
             }
             System.out.println();
