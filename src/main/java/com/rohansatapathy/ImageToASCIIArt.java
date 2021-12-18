@@ -114,7 +114,7 @@ public class ImageToASCIIArt {
 
     private static void displayHelpInfoAndExit(HelpFormatter formatter, Options options) {
         String header = "Convert image file to ASCII art and print it to the terminal\n\n";
-        String footer = "\nPlease report issues at https://github.com/rohansatapathy/WebcamToASCIIArt";
+        String footer = "\nPlease report issues at https://github.com/rohansatapathy/ImageToASCIIArt";
         formatter.printHelp(
                 "java -jar ImageToASCIIArt.jar [options] --input-file <file>",
                 header,
