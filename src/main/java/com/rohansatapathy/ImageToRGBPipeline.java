@@ -6,8 +6,8 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
-import org.bytedeco.javacv.*;
-import org.bytedeco.javacv.Frame;
+//import org.bytedeco.javacv.*;
+//import org.bytedeco.javacv.Frame;
 
 public class ImageToRGBPipeline {
 
@@ -73,20 +73,20 @@ public class ImageToRGBPipeline {
         return new Color[0][0];
     }
 
-    public Color[][] getRGBArrayFromWebcam(int targetWidth) {
-        try {
-            FrameGrabber grabber = new OpenCVFrameGrabber(1);
-            grabber.start();
-
-            Frame frame = grabber.grabFrame();
-            Java2DFrameConverter converter = new Java2DFrameConverter();
-            BufferedImage img = converter.getBufferedImage(frame);
-
-            return getRGBArrayFromImage(resizeImage(img, targetWidth));
-        } catch (FrameGrabber.Exception e) {
-            e.printStackTrace();
-        }
-
-        return new Color[0][0];
-    }
+//    public Color[][] getRGBArrayFromWebcam(int targetWidth) {
+//        try {
+//            FrameGrabber grabber = new OpenCVFrameGrabber(1);
+//            grabber.start();
+//
+//            Frame frame = grabber.grabFrame();
+//            Java2DFrameConverter converter = new Java2DFrameConverter();
+//            BufferedImage img = converter.getBufferedImage(frame);
+//
+//            return getRGBArrayFromImage(resizeImage(img, targetWidth));
+//        } catch (FrameGrabber.Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        return new Color[0][0];
+//    }
 }
