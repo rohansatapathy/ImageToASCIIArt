@@ -8,7 +8,7 @@ public class ImageToASCIIMain {
 
         // Get RGBArray
         ImageToRGBPipeline imgToRGB = new ImageToRGBPipeline();
-        Color[][] RGBArray = imgToRGB.getRGBArrayFromImage("ascii-pineapple.jpeg", 300);
+        Color[][] RGBArray = imgToRGB.getRGBArrayFromWebcam(400);
 
         System.out.println("Successfully constructed RGB array!");
         System.out.println("Width: " + RGBArray[0].length);
@@ -53,14 +53,22 @@ public class ImageToASCIIMain {
         // Print out image
         Attribute textColor;
         char character;
+        boolean COLOR = false;
         for (int row = 0; row < ASCIIArray.length; row++) {
             for (int col = 0; col < ASCIIArray[0].length; col++) {
                 character = ASCIIArray[row][col];
-                color = RGBArray[row][col];
-                textColor = Attribute.TEXT_COLOR(color.getRed(), color.getGreen(), color.getBlue());
-                for (int i = 0; i < 3; i++) {
-                    System.out.print(Ansi.colorize(Character.toString(character), textColor, Attribute.BOLD()));
+                if (COLOR) {
+                    color = RGBArray[row][col];
+                    textColor = Attribute.TEXT_COLOR(color.getRed(), color.getGreen(), color.getBlue());
+                    for (int i = 0; i < 3; i++) {
+                        System.out.print(Ansi.colorize(Character.toString(character), textColor, Attribute.BOLD()));
+                    }
+                } else {
+                    for (int i = 0; i < 3; i++) {
+                        System.out.print(character);
+                    }
                 }
+
             }
             System.out.println();
         }

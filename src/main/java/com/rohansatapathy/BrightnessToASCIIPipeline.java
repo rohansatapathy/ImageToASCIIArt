@@ -12,7 +12,14 @@ public class BrightnessToASCIIPipeline {
                 double brightness = brightnessArray[row][col];
 
                 // Scale the brightness value to get an index from 0 to the number of brightness chars
-                char brightnessChar = BRIGHTNESSCHARS.charAt((int)(brightness * BRIGHTNESSCHARS.length()));
+                int brightnessIndex = (int)(brightness * BRIGHTNESSCHARS.length());
+
+                // If the pixel is of full brightness, the index will be out of bounds so compensate for that
+                if (brightnessIndex == BRIGHTNESSCHARS.length()) {
+                    brightnessIndex--;
+                }
+
+                char brightnessChar = BRIGHTNESSCHARS.charAt(brightnessIndex);
                 ASCIIArray[row][col] = brightnessChar;
             }
         }
