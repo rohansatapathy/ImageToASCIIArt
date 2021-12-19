@@ -31,8 +31,12 @@ releases can be found [here](https://jdk.java.net/17/). Once you have installed 
 [latest release](https://github.com/rohansatapathy/ImageToASCIIArt/releases/latest) and download the file `ImageToASCIIArt.jar`. Move the file into a directory
 with images which you would like to convert to ASCII art. 
 
-For Windows users, it is also recommended to have [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)
-installed if you wish to have colored ASCII art. 
+For Windows users, it is recommended to have [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab)
+installed if you wish to have colored ASCII art. The standard Command Prompt doesn't support ANSI escape sequences
+by default, which are necessary for color images to be rendered. 
+
+For Mac users, it is recommended to have [iTerm](https://iterm2.com/) installed, as it has better color support than the
+standard macOS terminal.
 
 ## Usage
 
