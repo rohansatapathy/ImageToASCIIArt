@@ -60,4 +60,4 @@ file a PR! This is one of my first projects using Java and any help would be app
 
 ## License
 
-Copyright (C) Rohan Satapathy 2021. Code released under MIT License. See LICENSE for more details. 
+Copyright (C) 2021 Rohan Satapathy. Code released under MIT License. See LICENSE for more details. 
