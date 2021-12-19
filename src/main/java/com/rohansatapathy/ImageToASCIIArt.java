@@ -5,6 +5,7 @@ import com.diogonunes.jcolor.Attribute;
 import org.apache.commons.cli.*;
 
 import java.awt.*;
+import java.io.IOException;
 
 public class ImageToASCIIArt {
 
@@ -23,6 +24,7 @@ public class ImageToASCIIArt {
                 .hasArg()
                 .argName("file")
                 .desc("Use given file to generate ASCII art")
+                .required()
                 .build();
         options.addOption(inputFileOption);
         String inputFilePath = null;
@@ -78,8 +80,14 @@ public class ImageToASCIIArt {
         }
 
         // Get RGBArray from image source
-        ImageToRGBPipeline imgToRGB = new ImageToRGBPipeline();
-        Color[][] RGBArray = imgToRGB.getRGBArrayFromFile(inputFilePath, pixelArrayWidth);
+        Color[][] RGBArray = new Color[0][0];
+        try {
+            ImageToRGBPipeline imgToRGB = new ImageToRGBPipeline();
+            RGBArray = imgToRGB.getRGBArrayFromFile(inputFilePath, pixelArrayWidth);
+        } catch (IOException e) {
+            System.out.println("Cannot find file '" + inputFilePath + "'!");
+            System.exit(1);
+        }
 
         // Convert RGBArray to brightness array
         RGBToBrightnessPipeline RGBTToBrightness = new RGBToBrightnessPipeline();

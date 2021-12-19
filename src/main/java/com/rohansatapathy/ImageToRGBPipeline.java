@@ -60,17 +60,11 @@ public class ImageToRGBPipeline {
         return new Color[0][0];
     }
 
-    public Color[][] getRGBArrayFromFile(String fileName, int targetWidth) {
-        try {
-            File file = this.getFileFromResource(fileName);
-            BufferedImage img = resizeImage(ImageIO.read(file), targetWidth);
+    public Color[][] getRGBArrayFromFile(String fileName, int targetWidth) throws IOException{
+        File file = new File(fileName);
+        BufferedImage img = resizeImage(ImageIO.read(file), targetWidth);
 
-            return getRGBArrayFromImage(img);
-
-        } catch (URISyntaxException | IOException e) {
-            e.printStackTrace();
-        }
-        return new Color[0][0];
+        return getRGBArrayFromImage(img);
     }
 
 //    public Color[][] getRGBArrayFromWebcam(int targetWidth) {
