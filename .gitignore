@@ -44,7 +44,7 @@ gradle-app.setting
 .idea/usage.statistics.xml
 
 # Include the built jar file in version control for distribution
-!out/artifacts/WebcamToASCIIArt_jar/WebcamToASCIIArt.jar
+!out/artifacts/ImageToASCIIArt_jar/ImageToASCIIArt.jar
 
 # Ignore the rest of the binary output folder
 out/

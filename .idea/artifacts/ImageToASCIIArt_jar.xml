@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="WebcamToASCIIArt:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/WebcamToASCIIArt_jar</output-path>
-    <root id="archive" name="WebcamToASCIIArt.jar">
+  <artifact type="jar" name="ImageToASCIIArt:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ImageToASCIIArt_jar</output-path>
+    <root id="archive" name="ImageToASCIIArt.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
       </element>
