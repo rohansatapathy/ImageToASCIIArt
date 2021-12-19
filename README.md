@@ -57,6 +57,19 @@ Convert image file to ASCII art and print it to the terminal
 Please report issues at https://github.com/rohansatapathy/ImageToASCIIArt
 ```
 
+## Example
+
+I'm using iTerm on macOS, so I downloaded `ImageToASCIIArt.jar` into my Downloads folder, then I downloaded the file [`rickroll.png`](https://www.youtube.com/watch?v=dQw4w9WgXcQ) and issued this command:
+
+```sh
+$ java -jar ImageToASCIIArt.jar --color --width 210 --pixel-character-width 2 --input-file rickroll.png
+```
+
+Here is the corresponding output:
+
+![Screen Shot 2021-12-19 at 11 59 40 AM](https://user-images.githubusercontent.com/61920401/146685561-0f22230f-43b9-4cb4-a3e6-461d37738258.png)
+
+
 ## Contributing
 
 If you run into any trouble using this program, please file an issue so I can resolve it. If you would like to contribute, feel free to fork the repo and 
